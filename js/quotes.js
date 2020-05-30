@@ -10,6 +10,10 @@ var name = '';
 var company = '';
 var conference = '';
 
+var nameSection = document.getElementById('nameSection');
+var companySection = document.getElementById('companySection');
+var conferenceSection = document.getElementById('conferenceSection');
+
 var nameInput = document.getElementById('nameInput');
 nameInput.addEventListener('input', evt => {
     console.log('name input = ' + nameInput.value);
@@ -25,7 +29,7 @@ companyInput.addEventListener('input', evt => {
 var conferenceInput = document.getElementById('conferenceInput');
 conferenceInput.addEventListener('input', evt => {
     console.log('conference input = ' + conferenceInput.value);
-    company = conferenceInput.value;
+    conference = conferenceInput.value;
 });
 
 function newQuote() {
@@ -54,5 +58,30 @@ function newQuote() {
 }
 
 function dropDownFunction() {
-    console.log('dropdown');
+    var category = document.getElementById("category").value;
+    console.log(category);
+
+    if (category == 'jobStart') {
+        console.log('update');
+        nameSection.style.display = "block";
+        companySection.style.display = "block";
+        conferenceSection.style.display = "none";
+    } else if (category == 'jobQuit') {
+        console.log('update');
+        nameSection.style.display = "block";
+        companySection.style.display = "block";
+        conferenceSection.style.display = "none";
+    } else if (category == 'anniversary') {
+        console.log('update');
+        nameSection.style.display = "block";
+        companySection.style.display = "block";
+        conferenceSection.style.display = "none";
+    } else if (category == 'conference') {
+        console.log('update');
+        nameSection.style.display = "block";
+        companySection.style.display = "none";
+        conferenceSection.style.display = "block";
+    }
 }
+
+dropDownFunction();
