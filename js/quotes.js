@@ -1,18 +1,26 @@
 // var quotes = ['hello all my name is {name} and i work at {company}', 'hi everyeone my name be {name} me works at {company}',
 //     'whatup my man me name {name} i hustle at {company}', 'ayo dude i\'m {name} i work at {company}'];
 
-var jobStartQuotes = ['im {name} im starting at {company}', 'me name {name} me works at {company}'];
-var jobQuitQuotes = ['im {name} im leaving at {company}', 'me name {name} me leaving {company}'];
-var celebrateAnniversaryQuotes = ['im {name} im celebrating at {company}', 'me name {name} me celebrates at {company}'];
-var conferenceSpeakingQuotes = ['im {name} im speaking at {conference}', 'me name {name} me speaks at {conference}'];
+var jobStartQuotes = ['im {name} im starting at {company}',
+    'me name {name} me works at {company}'];
+var jobQuitQuotes = ['im {name} im leaving at {company}',
+    'me name {name} me leaving {company}'];
+var celebrateAnniversaryQuotes = ['im {name} im celebrating at {company}',
+    'me name {name} me celebrates at {company}'];
+var conferenceSpeakingQuotes = ['im {name} im speaking at {conference}',
+    'me name {name} me speaks at {conference}'];
+var winningAwardQuotes = ['im {name} im won the award {award}',
+    'me name {name} me won {award}'];
 
 var name = '';
 var company = '';
 var conference = '';
+var award = '';
 
 var nameSection = document.getElementById('nameSection');
 var companySection = document.getElementById('companySection');
 var conferenceSection = document.getElementById('conferenceSection');
+var awardSection = document.getElementById('awardSection');
 
 var nameInput = document.getElementById('nameInput');
 nameInput.addEventListener('input', evt => {
@@ -29,6 +37,11 @@ conferenceInput.addEventListener('input', evt => {
     conference = conferenceInput.value;
 });
 
+var awardInput = document.getElementById('awardInput');
+awardInput.addEventListener('input', evt => {
+    award = awardInput.value;
+});
+
 function newQuote() {
     var quotes;
     var category = document.getElementById("category").value;
@@ -41,6 +54,8 @@ function newQuote() {
         quotes = celebrateAnniversaryQuotes;
     } else if (category == 'conference') {
         quotes = conferenceSpeakingQuotes;
+    } else if (category == 'award') {
+        quotes = winningAwardQuotes;
     }
     
     var rand = Math.floor(Math.random() * quotes.length);
@@ -48,6 +63,7 @@ function newQuote() {
     quote = quote.replace('{name}', name);
     quote = quote.replace('{company}', company);
     quote = quote.replace('{conference}', conference);
+    quote = quote.replace('{award}', award);
 
     document.getElementById('quoteDisplay').innerHTML = quote;
 }
@@ -60,21 +76,31 @@ function dropDownFunction() {
         nameSection.style.display = "block";
         companySection.style.display = "block";
         conferenceSection.style.display = "none";
+        awardSection.style.display = "none";
     } else if (category == 'jobQuit') {
         console.log('update');
         nameSection.style.display = "block";
         companySection.style.display = "block";
         conferenceSection.style.display = "none";
+        awardSection.style.display = "none";
     } else if (category == 'anniversary') {
         console.log('update');
         nameSection.style.display = "block";
         companySection.style.display = "block";
         conferenceSection.style.display = "none";
+        awardSection.style.display = "none";
     } else if (category == 'conference') {
         console.log('update');
         nameSection.style.display = "block";
         companySection.style.display = "none";
         conferenceSection.style.display = "block";
+        awardSection.style.display = "none";
+    } else if (category == 'award') {
+        console.log('update');
+        nameSection.style.display = "block";
+        companySection.style.display = "none";
+        conferenceSection.style.display = "none";
+        awardSection.style.display = "block";
     }
 }
 
