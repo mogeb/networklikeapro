@@ -16,19 +16,16 @@ var conferenceSection = document.getElementById('conferenceSection');
 
 var nameInput = document.getElementById('nameInput');
 nameInput.addEventListener('input', evt => {
-    console.log('name input = ' + nameInput.value);
     name = nameInput.value;
 });
 
 var companyInput = document.getElementById('companyInput');
 companyInput.addEventListener('input', evt => {
-    console.log('company input = ' + companyInput.value);
     company = companyInput.value;
 });
 
 var conferenceInput = document.getElementById('conferenceInput');
 conferenceInput.addEventListener('input', evt => {
-    console.log('conference input = ' + conferenceInput.value);
     conference = conferenceInput.value;
 });
 
@@ -53,13 +50,10 @@ function newQuote() {
     quote = quote.replace('{conference}', conference);
 
     document.getElementById('quoteDisplay').innerHTML = quote;
-    console.log(category);
-    console.log('neq qyote');
 }
 
 function dropDownFunction() {
     var category = document.getElementById("category").value;
-    console.log(category);
 
     if (category == 'jobStart') {
         console.log('update');
