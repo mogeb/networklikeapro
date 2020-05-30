@@ -1,6 +1,3 @@
-// var quotes = ['hello all my name is {name} and i work at {company}', 'hi everyeone my name be {name} me works at {company}',
-//     'whatup my man me name {name} i hustle at {company}', 'ayo dude i\'m {name} i work at {company}'];
-
 var jobStartQuotes = ['im {name} im starting at {company}',
     'me name {name} me works at {company}'];
 var jobQuitQuotes = ['im {name} im leaving at {company}',
